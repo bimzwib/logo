@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -10,28 +9,30 @@
 <style>
 /* ===== DESIGN TOKENS ===== */
 :root {
-  --gold: #C9A84C;
-  --gold-light: #E8C97A;
-  --gold-pale: rgba(201,168,76,0.12);
-  --pink: #F2C4CE;
-  --pink-deep: #D4788A;
-  --beige: #F7F1E8;
-  --beige-warm: #EFE5D2;
+  /* Rose Gold palette */
+  --gold: #C8956C;
+  --gold-light: #E8B494;
+  --gold-pale: rgba(200,149,108,0.13);
+  --pink: #E8C4CE;
+  --pink-deep: #B8687A;
+  --beige: #F7F1EC;
+  --beige-warm: #EFE5D8;
   --white: #FFFFFF;
-  --off-white: #FAF8F5;
-  --dark: #0A0A0A;
-  --charcoal: #1A1A1A;
-  --mid: #2E2E2E;
-  --text-light: #6B5E5E;
+  --off-white: #FAF7F4;
+  --dark: #0D0A0F;
+  --charcoal: #1A1520;
+  --mid: #2A2035;
+  --text-light: #7A6A7A;
   --wa: #25D366;
 
-  --bg: #FAF8F5;
-  --bg2: #F0EBE3;
-  --surface: #FFFFFF;
-  --text: #1A1A1A;
-  --text2: #5C4F4F;
-  --border: rgba(201,168,76,0.2);
-  --nav-bg: rgba(250,248,245,0.95);
+  /* Dark theme is default */
+  --bg: #0D0A0F;
+  --bg2: #130F18;
+  --surface: #1C1625;
+  --text: #F0EAF5;
+  --text2: #9A8AAA;
+  --border: rgba(200,149,108,0.22);
+  --nav-bg: rgba(13,10,15,0.96);
 
   --trans: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   --font-ar: 'Tajawal', sans-serif;
@@ -39,14 +40,14 @@
   --font-display: 'Playfair Display', serif;
 }
 
-[data-theme="dark"] {
-  --bg: #0A0A0A;
-  --bg2: #141414;
-  --surface: #1C1C1C;
-  --text: #F5F0E8;
-  --text2: #A89080;
-  --border: rgba(201,168,76,0.25);
-  --nav-bg: rgba(10,10,10,0.95);
+[data-theme="light"] {
+  --bg: #FAF7F4;
+  --bg2: #F0EBE5;
+  --surface: #FFFFFF;
+  --text: #1A1020;
+  --text2: #6A5060;
+  --border: rgba(200,149,108,0.2);
+  --nav-bg: rgba(250,247,244,0.96);
 }
 
 /* ===== RESET ===== */
@@ -92,12 +93,9 @@ html[lang="en"] .en-text { display: initial; }
 .nav-logo {
   display: flex; align-items: center; gap: 10px;
 }
-.nav-crown {
-  display: flex; gap: 3px; align-items: flex-end;
-}
-.nav-crown span {
-  display: block; width: 3px; border-radius: 2px;
-  background: linear-gradient(180deg, var(--gold), rgba(201,168,76,0.3));
+.nav-crown-svg {
+  filter: drop-shadow(0 0 8px rgba(200,149,108,0.4));
+  flex-shrink: 0;
 }
 .nav-brand {
   font-family: 'Cormorant Garamond', serif;
@@ -173,9 +171,9 @@ html[lang="en"] .nav-brand { font-family: 'Cormorant Garamond', serif; font-size
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
   background:
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(242,196,206,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 40% at 20% 60%, rgba(201,168,76,0.05) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(200,149,108,0.09) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(184,104,122,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 15% 60%, rgba(120,80,160,0.08) 0%, transparent 60%);
 }
 .hero-particles {
   position: absolute; inset: 0; overflow: hidden; z-index: 0;
@@ -301,13 +299,14 @@ html[lang="ar"] .section-title { font-family: 'Tajawal', sans-serif; font-weight
 
 .about-badge {
   width: 100%; aspect-ratio: 3/4; max-width: 340px; margin: 0 auto;
-  background: linear-gradient(145deg, var(--charcoal), var(--mid));
+  background: linear-gradient(145deg, #13101A, #1C1625);
   border-radius: 4px; overflow: hidden; position: relative;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  border: 1px solid rgba(200,149,108,0.15);
 }
 .about-badge-inner {
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(201,168,76,0.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(200,149,108,0.1) 0%, transparent 70%);
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
 }
 .about-monogram {
@@ -460,10 +459,10 @@ html[lang="ar"] .section-title { font-family: 'Tajawal', sans-serif; font-weight
 .modal-close:hover { background: var(--gold); }
 
 /* ===== WHY PRINCESS ===== */
-#why { background: var(--charcoal); color: var(--white); position: relative; overflow: hidden; }
+#why { background: #13101A; color: var(--white); position: relative; overflow: hidden; }
 #why::before {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse 90% 60% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse 90% 60% at 50% 0%, rgba(200,149,108,0.08) 0%, transparent 70%);
 }
 #why .section-title { color: var(--white); }
 #why .section-sub { color: rgba(255,255,255,0.5); }
@@ -483,8 +482,8 @@ html[lang="ar"] .section-title { font-family: 'Tajawal', sans-serif; font-weight
 .why-desc { font-size: 0.75rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
 
 /* ===== TESTIMONIALS ===== */
-#testimonials { background: var(--off-white); }
-[data-theme="dark"] #testimonials { background: var(--bg2); }
+#testimonials { background: var(--bg2); }
+[data-theme="light"] #testimonials { background: #F0EBE5; }
 .testimonials-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
 @media (min-width: 600px) { .testimonials-grid { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 900px) { .testimonials-grid { grid-template-columns: repeat(3, 1fr); } }
@@ -504,12 +503,13 @@ html[lang="ar"] .section-title { font-family: 'Tajawal', sans-serif; font-weight
 /* ===== CONTACT ===== */
 #contact { background: var(--bg); }
 .contact-inner {
-  background: var(--charcoal); border-radius: 8px; overflow: hidden;
+  background: #13101A; border-radius: 8px; overflow: hidden;
   position: relative;
+  border: 1px solid rgba(200,149,108,0.15);
 }
 .contact-inner::before {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.1) 0%, transparent 70%);
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,149,108,0.1) 0%, transparent 70%);
 }
 .contact-content {
   position: relative; z-index: 1; text-align: center;
@@ -785,7 +785,7 @@ html[lang="ar"] .wa-float { right: auto; left: 24px; }
 .napoli-logo { background:#fff9f0; }
 </style>
 </head>
-<body data-theme="light">
+<body data-theme="dark">
 
 <!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/201552499493" target="_blank" class="wa-float" aria-label="WhatsApp">
@@ -796,13 +796,27 @@ html[lang="ar"] .wa-float { right: auto; left: 24px; }
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="#hero" class="nav-logo">
-      <div class="nav-crown">
-        <span style="height:10px"></span>
-        <span style="height:18px"></span>
-        <span style="height:26px"></span>
-        <span style="height:18px"></span>
-        <span style="height:10px"></span>
-      </div>
+      <svg class="nav-crown-svg" width="32" height="26" viewBox="0 0 64 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Crown points -->
+        <polygon points="32,2 8,32 56,32" fill="rgba(200,149,108,0.15)" stroke="none"/>
+        <line x1="32" y1="2" x2="8" y2="32" stroke="#C8956C" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="32" y1="2" x2="56" y2="32" stroke="#C8956C" stroke-width="1.8" stroke-linecap="round"/>
+        <!-- Side points -->
+        <line x1="8" y1="32" x2="2" y2="18" stroke="#C8956C" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="56" y1="32" x2="62" y2="18" stroke="#C8956C" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="2" y1="18" x2="2" y2="32" stroke="#C8956C" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="62" y1="18" x2="62" y2="32" stroke="#C8956C" stroke-width="1.8" stroke-linecap="round"/>
+        <!-- Base band -->
+        <rect x="2" y="32" width="60" height="10" rx="2" fill="none" stroke="#C8956C" stroke-width="1.8"/>
+        <!-- Gems -->
+        <circle cx="32" cy="2" r="3" fill="#C8956C"/>
+        <circle cx="2" cy="18" r="2.5" fill="#C8956C" opacity="0.7"/>
+        <circle cx="62" cy="18" r="2.5" fill="#C8956C" opacity="0.7"/>
+        <!-- Base gems -->
+        <circle cx="14" cy="37" r="2" fill="#C8956C" opacity="0.5"/>
+        <circle cx="32" cy="37" r="2.5" fill="#C8956C"/>
+        <circle cx="50" cy="37" r="2" fill="#C8956C" opacity="0.5"/>
+      </svg>
       <span class="nav-brand">
         <span class="ar-text">برنسيس</span>
         <span class="en-text">PRINCESS</span>
@@ -816,8 +830,8 @@ html[lang="ar"] .wa-float { right: auto; left: 24px; }
         <a href="#contact" onclick="closeMenu()"><span class="ar-text">تواصل</span><span class="en-text">Contact</span></a>
       </nav>
       <div class="nav-controls">
-        <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme" id="themeBtn">🌙</button>
-        <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
+        <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme" id="themeBtn">☀️</button>
+        <button class="lang-btn" onclick="toggleLang()" id="langBtn">AR</button>
         <button class="hamburger" onclick="toggleMenu()" id="hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -832,16 +846,39 @@ html[lang="ar"] .wa-float { right: auto; left: 24px; }
   <div class="hero-particles" id="particles"></div>
   <div class="hero-content">
     <div class="hero-crown-wrap">
-      <svg width="80" height="56" viewBox="0 0 80 56" fill="none">
-        <polygon points="40,4 10,42 70,42" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
-        <polygon points="40,4 15,38 65,38" fill="rgba(201,168,76,0.08)"/>
-        <circle cx="10" cy="42" r="3.5" fill="#C9A84C"/>
-        <circle cx="40" cy="4" r="3.5" fill="#C9A84C"/>
-        <circle cx="70" cy="42" r="3.5" fill="#C9A84C"/>
-        <circle cx="25" cy="28" r="2.5" fill="#C9A84C" opacity="0.6"/>
-        <circle cx="55" cy="28" r="2.5" fill="#C9A84C" opacity="0.6"/>
-        <rect x="8" y="42" width="64" height="10" rx="2" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
-        <line x1="8" y1="47" x2="72" y2="47" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+      <svg width="110" height="78" viewBox="0 0 110 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="crownGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#E8B494"/>
+            <stop offset="100%" stop-color="#A0603A"/>
+          </linearGradient>
+          <filter id="crownGlow">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <!-- Crown fill -->
+        <polygon points="55,5 15,52 95,52" fill="rgba(200,149,108,0.1)"/>
+        <polygon points="55,5 5,28 5,52 15,52" fill="rgba(200,149,108,0.06)"/>
+        <polygon points="55,5 105,28 105,52 95,52" fill="rgba(200,149,108,0.06)"/>
+        <!-- Main outline -->
+        <polyline points="5,52 5,26 55,5 105,26 105,52" fill="none" stroke="url(#crownGrad)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" filter="url(#crownGlow)"/>
+        <line x1="5" y1="52" x2="15" y2="52" stroke="url(#crownGrad)" stroke-width="2"/>
+        <line x1="95" y1="52" x2="105" y2="52" stroke="url(#crownGrad)" stroke-width="2"/>
+        <!-- Base band -->
+        <rect x="5" y="52" width="100" height="16" rx="3" fill="none" stroke="url(#crownGrad)" stroke-width="2"/>
+        <line x1="5" y1="62" x2="105" y2="62" stroke="#C8956C" stroke-width="0.6" opacity="0.35"/>
+        <!-- Crown gems -->
+        <circle cx="55" cy="5" r="4.5" fill="#C8956C" filter="url(#crownGlow)"/>
+        <circle cx="5" cy="26" r="3.5" fill="#C8956C" opacity="0.8"/>
+        <circle cx="105" cy="26" r="3.5" fill="#C8956C" opacity="0.8"/>
+        <!-- Base gems -->
+        <circle cx="22" cy="60" r="2.5" fill="#C8956C" opacity="0.55"/>
+        <circle cx="55" cy="60" r="3.5" fill="#C8956C"/>
+        <circle cx="88" cy="60" r="2.5" fill="#C8956C" opacity="0.55"/>
+        <!-- Inner decorative lines -->
+        <line x1="30" y1="52" x2="55" y2="5" stroke="#C8956C" stroke-width="0.6" opacity="0.2"/>
+        <line x1="80" y1="52" x2="55" y2="5" stroke="#C8956C" stroke-width="0.6" opacity="0.2"/>
       </svg>
     </div>
     <div class="hero-eyebrow">
@@ -885,6 +922,13 @@ html[lang="ar"] .wa-float { right: auto; left: 24px; }
     <div class="about-grid">
       <div class="about-badge reveal">
         <div class="about-badge-inner">
+          <!-- Crown watermark -->
+          <svg style="position:absolute;opacity:0.06;width:70%;top:10%;left:50%;transform:translateX(-50%)" viewBox="0 0 64 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="32,2 8,32 56,32" fill="#C8956C"/>
+            <polygon points="32,2 2,15 2,32 8,32" fill="#C8956C"/>
+            <polygon points="32,2 62,15 62,32 56,32" fill="#C8956C"/>
+            <rect x="2" y="32" width="60" height="14" rx="3" fill="#C8956C"/>
+          </svg>
           <div class="about-monogram">A</div>
           <div class="about-ring"><div class="about-ring-text">A</div></div>
           <div class="about-badge-name">AMIRA</div>
@@ -1570,12 +1614,19 @@ html[lang="ar"] .wa-float { right: auto; left: 24px; }
     <div class="contact-inner">
       <div class="contact-content">
         <div class="contact-crown">
-          <svg width="60" height="42" viewBox="0 0 80 56" fill="none">
-            <polygon points="40,4 10,42 70,42" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
-            <circle cx="10" cy="42" r="3" fill="#C9A84C"/>
-            <circle cx="40" cy="4" r="3" fill="#C9A84C"/>
-            <circle cx="70" cy="42" r="3" fill="#C9A84C"/>
-            <rect x="8" y="42" width="64" height="8" rx="1.5" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+          <svg width="56" height="40" viewBox="0 0 64 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="32,2 8,32 56,32" fill="rgba(200,149,108,0.12)"/>
+            <line x1="32" y1="2" x2="8" y2="32" stroke="#C8956C" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="32" y1="2" x2="56" y2="32" stroke="#C8956C" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="8" y1="32" x2="2" y2="18" stroke="#C8956C" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="56" y1="32" x2="62" y2="18" stroke="#C8956C" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="2" y1="18" x2="2" y2="32" stroke="#C8956C" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="62" y1="18" x2="62" y2="32" stroke="#C8956C" stroke-width="1.8" stroke-linecap="round"/>
+            <rect x="2" y="32" width="60" height="10" rx="2" fill="none" stroke="#C8956C" stroke-width="1.8"/>
+            <circle cx="32" cy="2" r="3" fill="#C8956C"/>
+            <circle cx="2" cy="18" r="2.5" fill="#C8956C" opacity="0.7"/>
+            <circle cx="62" cy="18" r="2.5" fill="#C8956C" opacity="0.7"/>
+            <circle cx="32" cy="37" r="2.5" fill="#C8956C"/>
           </svg>
         </div>
         <div class="section-label">
@@ -1602,13 +1653,18 @@ html[lang="ar"] .wa-float { right: auto; left: 24px; }
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">
-      <div class="nav-crown">
-        <span style="height:8px;background:var(--gold);display:block;width:2px;border-radius:2px"></span>
-        <span style="height:14px;background:var(--gold);display:block;width:2px;border-radius:2px"></span>
-        <span style="height:20px;background:var(--gold);display:block;width:2px;border-radius:2px"></span>
-        <span style="height:14px;background:var(--gold);display:block;width:2px;border-radius:2px"></span>
-        <span style="height:8px;background:var(--gold);display:block;width:2px;border-radius:2px"></span>
-      </div>
+      <svg width="28" height="22" viewBox="0 0 64 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="32,2 8,32 56,32" fill="rgba(200,149,108,0.1)"/>
+        <line x1="32" y1="2" x2="8" y2="32" stroke="#C8956C" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="32" y1="2" x2="56" y2="32" stroke="#C8956C" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="8" y1="32" x2="2" y2="18" stroke="#C8956C" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="56" y1="32" x2="62" y2="18" stroke="#C8956C" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="2" y1="18" x2="2" y2="32" stroke="#C8956C" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="62" y1="18" x2="62" y2="32" stroke="#C8956C" stroke-width="1.8" stroke-linecap="round"/>
+        <rect x="2" y="32" width="60" height="10" rx="2" fill="none" stroke="#C8956C" stroke-width="1.8"/>
+        <circle cx="32" cy="2" r="3" fill="#C8956C"/>
+        <circle cx="32" cy="37" r="2.5" fill="#C8956C"/>
+      </svg>
       <span class="footer-brand">PRINCESS</span>
     </div>
     <div class="footer-divider"></div>
@@ -1621,7 +1677,7 @@ html[lang="ar"] .wa-float { right: auto; left: 24px; }
     </div>
     <div class="footer-controls">
       <button class="theme-btn" onclick="toggleTheme()" id="footerThemeBtn">🌙</button>
-      <button class="lang-btn" onclick="toggleLang()" id="footerLangBtn">EN</button>
+      <button class="lang-btn" onclick="toggleLang()" id="footerLangBtn">AR</button>
     </div>
     <a href="https://wa.me/201552499493" target="_blank" class="footer-wa">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -1647,7 +1703,7 @@ html[lang="ar"] .wa-float { right: auto; left: 24px; }
 })();
 
 // ===== THEME =====
-let isDark = false;
+let isDark = true;
 function toggleTheme(){
   isDark = !isDark;
   document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
@@ -1658,7 +1714,7 @@ function toggleTheme(){
 }
 
 // ===== LANGUAGE =====
-let isEn = false;
+let isEn = true;
 function toggleLang(){
   isEn = !isEn;
   const html = document.documentElement;
